@@ -216,6 +216,17 @@ body{
     grid-gap: 28px;
     margin-top: 30px;
 }
+
+/* Ensure section containers use full width inside flex-based sections */
+.services{
+    flex: 0 0 100%;
+    width: 100%;
+}
+
+/* Slightly larger minimum width for service cards to avoid very small blocks */
+.services-list{
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
 .services-list div{
     background-color: transparent;
     padding: 40px;
@@ -765,8 +776,11 @@ section{
 }
 
 /* Smooth scroll behavior */
-html {
-    scroll-behavior: smooth;
+html { scroll-behavior: smooth; }
+
+/* Ensure the top section isn't hidden under the fixed header when using anchor links */
+#home{
+    scroll-margin-top: 90px;
 }
 
 /* Latest Projects / Portfolio styles */
